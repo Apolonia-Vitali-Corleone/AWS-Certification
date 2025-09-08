@@ -14,6 +14,8 @@ CDN服务
 
 专用物理线路
 
+需要ISP和colocation facility
+
 # AWS Global Accelerator 
 
 全球加速器
@@ -62,7 +64,11 @@ Virtual Private Cloud
 
 比AWS Cloud Map更完整的服务发现
 
-# Network access Control List
+# Network Access Control List
 
 关键词：stateless network  filtering
+
+act as a VPC firewall at the subnet level
+
+VPC的子网层级的防火墙
 

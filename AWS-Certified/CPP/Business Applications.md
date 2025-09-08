@@ -1,3 +1,7 @@
-Amazon Connect 
+# Amazon Connect 
 
-Amazon Simple Email Service (Amazon SES)
+contact center
+
+business consolidate modernize their call operations
+
+# Amazon Simple Email Service (Amazon SES)

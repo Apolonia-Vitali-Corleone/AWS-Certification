@@ -1,6 +1,8 @@
 # AWS Batch 
 
-# Amazon EC2 
+# Amazon EC2
+
+supported by Saving Plans
 
 # AWS Elastic Beanstalk
 
@@ -8,7 +10,9 @@
 
 底层可控
 
-# Amazon Lightsail 
+# Amazon Lightsail
+
+pre-configured application stacks
 
 # AWS Outposts 
 
