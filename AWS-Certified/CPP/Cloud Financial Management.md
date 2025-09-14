@@ -8,7 +8,15 @@
 
 provide rightsizing recommendations for Amazon EC2 resource at no additional cost
 
+# AWS Pricing Calculator
+
+**事前估算** AWS 费用，用来规划新/迁移/扩容方案，按区域与配置生成月度/年度成本估算，并可分组查看明细、包含折扣与承诺（如 RI/Savings Plans）的影响。既可通过公开站点使用，也可在 Billing & Cost Management 控制台里的 “Pricing Calculator” 入口使用。
+
 # AWS Marketplace
+
+第三方厂商在 AWS 公共商店发布
+
+
 
 # AWS Billing Conductor
 

@@ -12,6 +12,26 @@
 5. **Security Perspective** - 确保组织满足安全和合规目标 
 6. **Operations Perspective** - 确保云服务的交付能够满足业务需求
 
+# CAF KEY WORDS
+
+**Business（业务）**：谈**战略与价值**、商业案例、预算与收益。
+ *keywords*: business case/value, strategy, portfolio, ROI, funding, KPIs
+
+**People（人员）**：谈**人和组织**：角色分工、技能培训、变更管理、云素养。
+ *keywords*: roles, org change, training, **cloud fluency**, talent, culture
+
+**Governance（治理）**：谈**规章与把关**：政策、合规、风险、财务治理、采购。
+ *keywords*: policy/standards, risk, compliance, **FinOps/Cloud financial mgmt**, sourcing
+
+**Platform（平台）**：谈**技术底座**：着陆区、网络、计算、存储、数据库、自动化 IaC。
+ *keywords*: landing zone, VPC/network, compute/storage/db, CI/CD, IaC
+
+**Security（安全）**：谈**保护与控制**：身份、数据保护、检测与响应。
+ *keywords*: IAM, data protection/KMS, detective controls, threat/vuln, incident response
+
+**Operations（运维）**：谈**Day-2 运行**：监控告警、变更发布、事件/问题管理、SRE、自动化。
+ *keywords*: monitoring/observability, incident/problem, change/release, runbooks, automation
+
 # Cloud Transformation Journey
 
 CAF 的旅程有 **4 个推荐阶段**：

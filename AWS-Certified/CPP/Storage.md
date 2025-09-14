@@ -36,23 +36,47 @@ FSx=特定文件系统
 
 对象存储；直接API访问
 
-# Amazon S3 Glacier
+## Amazon S3 Glacier
 
 冷备份；审计归档
 
-# Amazon S3 Analytics
+## Amazon S3 Analytics
 
 Storage Class Analysis
 
 分析桶里对象的**访问模式**，帮你判断哪些数据很少被访问、**适合转到 IA 类**（S3 Standard-IA / One Zone-IA），以便你**制定 Lifecycle 迁移规则**来省钱。
 
-# AWS S3 Inventory Report
+## Amazon S3 File Gateway
 
+在本地以 **SMB/NFS 文件共享** 方式挂载，**把文件映射为 S3 对象**；本地透明缓存、后台并行传输与带宽管理，适合归档/备份、数据湖、ML 数据集等。
 
+## Amazon S3 Inventory Report
 
-# Amazon S3 File Gateway
+Amazon S3 的 **数据管理与报告工具**（Management & Analytics 功能家族）。
 
+定期（每日或每周）生成 CSV/ORC/Parquet 格式的清单文件，列出 bucket 中对象的**元数据**（比如存储类、加密状态、标签、版本 ID 等）。
 
+常用于合规审计、大规模对象跟踪、验证加密或生命周期策略。
+
+## Amazon S3 Versioning
+
+因为它专门用来防 **误删/误覆盖**：
+
+- 开启后，**覆盖会生成新版本，旧版本仍可回滚**；
+- “删除”只是打一个 **Delete Marker**，**可恢复**到之前版本；
+- 还可配合 **MFA Delete** 增强删除保护（可选）。
+
+## Amazon S3 Lifecycle Rules
+
+**做**分层/过期**管理，可能反而把对象**自动删掉，不防误删/误覆盖。
+
+## Amazon S3 Bucket Policies
+
+管**谁能访问**；若授权用户误操作，策略并不能保留旧版本。
+
+## Amazon S3 Server-side Encryption
+
+只管**保密性**（加密存储），**不能**防止被覆盖或删除。
 
 # AWS Storage Gateway
 

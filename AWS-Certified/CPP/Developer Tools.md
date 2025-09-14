@@ -28,13 +28,32 @@ CodeStar 常帮你同时创建 CodeCommit/GitHub、CodeBuild、**CodePipeline**�
 
 # AWS Application Composer
 
+可视化拖拽**无服务器架构**（API GW、Lambda、SQS、DynamoDB…），一键生成 **IaC 模板**（SAM/CFN/CDK）。
+ *不是运行时/流水线，只负责设计+导出模板。*
+
 # AWS CodeArtifact
+
+托管**包仓库**（npm/PyPI/Maven/NuGet），可做上游代理缓存与权限管控。
+ *不存容器镜像（镜像用 ECR）。*
 
 # AWS CodeDeploy
 
+**部署编排**：把应用发布到 **EC2/本地、ECS、Lambda**；支持**滚动/蓝绿/金丝雀**、健康检查与自动回滚。
+ *常与 CodePipeline 串联做 CI/CD。*
+
 # Amazon CodeGuru
 
+**智能代码审查 + 性能剖析**套件：
+
+- Reviewer：PR/仓库的静态建议（Bug/安全/最佳实践）。
+- Profiler：生产环境**热点/CPU/内存**分析与节省建议。
+   *以 Java/Python 最常见。*
+
+
+
 # AWS CloudShell
+
+browser-based, pre-authenticated service
 
 # AWS Device Farm
 

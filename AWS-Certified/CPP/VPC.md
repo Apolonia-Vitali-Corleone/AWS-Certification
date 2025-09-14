@@ -5,7 +5,7 @@
 - **VPC / CIDR（IPv4/IPv6）**：你私有网络的边界与网段。
 - **Subnet（子网：Public / Private）**：可用区内的网段切分；是否“公有”取决于其路由表是否指向 IGW。
 - **Route Table（路由表：子网关联 / 边界关联）**：决定去往目的网段的下一跳；除了常见的“子网路由表”，还有**网关路由表**可关联到 IGW/VGW 来控制入口/出口流量路径。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html?utm_source=chatgpt.com))
-- **Internet Gateway（IGW）**：让子网可直连公网；默认 VPC 才自带，其它需手动创建与附加并在路由表指向。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html?utm_source=chatgpt.com))
+- 
 - **NAT Gateway（NATGW：Public / Private 两种）**：让私有子网实例**仅出站**访问外部（IPv4），外部不能反向连入；**Public NATGW**出网经 IGW，**Private NATGW**用于经 TGW/VGW 出网到别的 VPC/本地。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html?utm_source=chatgpt.com))
 - **Egress-only Internet Gateway（EIGW）**：**仅 IPv6** 的出站公网访问（不做 NAT），入站不予接受；IPv4 出站用 NATGW。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html?utm_source=chatgpt.com))
 - **DHCP Option Set**：为 VPC 内主机分发 DNS 域名、NTP 等网络参数。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html?utm_source=chatgpt.com))
@@ -66,6 +66,10 @@
 
 点对点，不经过AWS Transit Gateway，不需要“路由”
 
+# Internet Gateway（IGW）
+
+让子网可直连公网；默认 VPC 才自带，其它需手动创建与附加并在路由表指向。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html?utm_source=chatgpt.com))
+
 # AWS Transit Gateway
 
 多VPC之间，像一个路由一样
@@ -77,3 +81,5 @@ S3/DynamoDB 专用；路由表指向网关，无需 IGW/NAT。**不使用 Privat
 # VPC Flow Logs
 
 记录 **ENI/VPC/Subnet** 粒度的**流量元数据**（五元组、accept/reject 等），可送 CloudWatch Logs / S3 / Firehose；S3 默认**5 分钟**聚合投递一批文件。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html?utm_source=chatgpt.com))
+
+inbound and outbound traffic in Amazon VPC
