@@ -12,12 +12,6 @@ provide rightsizing recommendations for Amazon EC2 resource at no additional cos
 
 **事前估算** AWS 费用，用来规划新/迁移/扩容方案，按区域与配置生成月度/年度成本估算，并可分组查看明细、包含折扣与承诺（如 RI/Savings Plans）的影响。既可通过公开站点使用，也可在 Billing & Cost Management 控制台里的 “Pricing Calculator” 入口使用。
 
-# AWS Marketplace
-
-第三方厂商在 AWS 公共商店发布
-
-
-
 # AWS Billing Conductor
 
 # Cost Allocation Tags
@@ -38,3 +32,7 @@ provide rightsizing recommendations for Amazon EC2 resource at no additional cos
 - 在 **Billing → Cost allocation tags** 中**启用**要计费的标签，否则不会出现在账单维度里。
 - 统一键名与取值（如 `CostCenter/Project/Owner/Env`），全账号一致地给资源打标。
 - 搭配 **Cost Explorer / CUR / Budgets** 做按项目/部门的分摊、预算预警与报告。
+
+# AWS Marketplace
+
+第三方厂商在 AWS 公共商店发布

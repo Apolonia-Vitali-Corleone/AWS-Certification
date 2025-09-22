@@ -44,9 +44,25 @@ IaC
 
 健康状态面板
 
+**AWS Health Dashboard**（含 Personal Health Dashboard）只报告**AWS 侧的事件**——服务中断、维护、配额快满等，**不检查你账号的安全组配置**，所以发现不了“某端口对 0.0.0.0/0 放通”这类错误。
+
 # AWS License Manager
 
 软件许可证管理器
+
+# AWS Systems Manager
+
+统一运维工具
+
+运维套件（自动化、补丁、参数、Fleet Manager）
+
+## AWS Systems Manager Parameter Store
+
+既要存“配置数据”又要存“密码”，Parameter Store 一站式满足：普通配置用 **String**，敏感信息用 **SecureString（KMS 加密）**。
+
+**性价比最高**：Standard 层**按调用计费、无每条密文月租**；而 **Secrets Manager** 对每个 secret **按月收费**（并按调用计费），适合需要**自动轮换/高级审计**等场景，但成本更高。
+
+自带分层路径、版本管理、IAM 细粒度权限，直接被 EC2/Lambda/容器读取，集中管理很方便。
 
 # AWS Management Console
 
@@ -56,7 +72,9 @@ AWS网页UI控制台
 
 更底层；AWS Control Tower基于此
 
-多账号治理与 **SCP**；可配合创建**组织级**的 Access Analyzer，
+多账号治理与 **SCP**；可配合创建**组织级**的 Access Analyzer
+
+因为 **AWS Organizations 只做账号级治理**（多账号管理、合并计费、组织单元、SCP护栏等），**不会去解析具体资源策略**来判断“这个 S3 bucket/ IAM role 是否被外部主体共享”。
 
 # AWS Service Catalog
 
@@ -68,11 +86,7 @@ AWS网页UI控制台
 
 服务器配额管理
 
-# AWS Systems Manager
 
-统一运维工具
-
-运维套件（自动化、补丁、参数、Fleet Manager）
 
 # AWS Trusted Advisor
 
@@ -106,6 +120,8 @@ AWS网页UI控制台
 
 **托管运维服务**（监控、补丁、事件、变更等“日常运营”），可在迁移后代运维；不是专门的迁移项目团队。
 
+AMS 是“托管运营”服务，AWS 官方团队+自动化为你**代管日常运维**，适合“已上云、要在规模化下更高效且更安全地运营”的公司
+
 # AWS Professional Services（ProServe）
 
 **付费咨询与交付团队**（架构师/PM/迁移专家），按 AWS 最佳实践**亲自下场做项目**。题干要“全球专家团队”→ **选它**。
@@ -119,4 +135,18 @@ AWS网页UI控制台
 2. **Always Free**（长期有效）
     例：AWS Lambda 每月一定量的请求与计算、DynamoDB 基础用量、API Gateway/CloudWatch 的部分配额等。
 3. **短期试用（Trials）**
-    某些服务提供 **N 天/次**的临时免费试用配额（随服务不同而不同）。
+    某些服务提供 **N 天/次**的临时免费试用配额（随服务不同而不同）。.
+
+# AWS Local Zones
+
+AWS 在某些城市就近建的小型“边缘分区”（仍属 AWS 机房，不在你家机房）。用来把算力放到**靠近用户/媒体工作站**的城市，拿 **单/低两位毫秒**延迟；不是把 AWS 搬到你机房，所以不是“把 AWS 扩展到 on-prem”。
+
+
+
+# Amazon Elastic Block Store (Amazon EBS) Snapshots
+
+EBS 卷的增量**时间点备份**，可复制到**跨 Region/账号**，用于恢复/新卷。
+
+# AWS Elastic Disaster Recovery (DRS)
+
+持续复制（block-level）到目标 Region/账号，一键切换/回切（原 CloudEndure）。

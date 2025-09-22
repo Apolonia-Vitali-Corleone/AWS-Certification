@@ -12,6 +12,42 @@
 5. **Security Perspective** - 确保组织满足安全和合规目标 
 6. **Operations Perspective** - 确保云服务的交付能够满足业务需求
 
+## Business Perspective
+
+## People Perspective
+
+## Governance Perspective
+
+
+
+## Platform Perspective
+
+**Data engineering → Platform**（数据工程属平台基座能力）
+
+**CI/CD → Platform**（持续集成与交付是平台工程/DevOps 能力）
+
+
+
+## Security Perspective
+
+**Incident response（安全事件响应）**——处理与安全相关的事件与入侵。[AWS Documentation](https://docs.aws.amazon.com/whitepapers/latest/aws-caf-security-perspective/incident-response.html?utm_source=chatgpt.com)
+
+**Infrastructure protection（基础设施防护）**——保护网络与计算资源免受未授权访问与漏洞威胁。
+
+**Infrastructure protection → Security**（基础设施防护属安全能力：IAM/网络/主机等）
+
+
+
+## Operations Perspective
+
+**Observability**、**Availability and continuity** 也都归在 **Operations** 视角
+
+ **“Incident and problem management（事件与问题管理）” 属于 \*Operations（运营）\* 视角**
+
+**Performance and capacity management → Operations**（运行容量/性能管控是运维能力）
+
+**Change and release management → Operations**（变更与发布管理是运维流程能力）
+
 # CAF KEY WORDS
 
 **Business（业务）**：谈**战略与价值**、商业案例、预算与收益。
@@ -43,11 +79,15 @@ CAF 的旅程有 **4 个推荐阶段**：
 
 # AWS Well-Architect Framework
 
+用于**已在云上的工作负载**做架构体检（6大支柱）
+
 **六大支柱（6 Pillars）**：
 
 1. **Operational Excellence（运维卓越）**：run-books、自动化、演练、可观测。
 2. **Security（安全）**：最小权限、分层防御、数据保护、可追溯。
 3. **Reliability（可靠性）**：故障域、冗余、自动恢复、变更管理。
+   - **Elasticity = 自动伸缩 + 自愈能力**：能**自动增加/减少/替换**资源来应对故障与负载变化（如 ASG 替换不健康实例、Serverless 扩缩容）。这种“可恢复 + 维持可用”的效果，最贴近题干的“系统在遇到运行问题仍能保持功能”。在 Well-Architected 语境里，这属于**可靠性/弹性（resiliency）**的体现；若有 “Resiliency/Reliability” 选项应选它，但没有时 **Elasticity** 是最相近的概念。
 4. **Performance Efficiency（性能效率）**：选型与弹性、基准测试。
+   - 资源与性能效率。
 5. **Cost Optimization（成本优化）**：按需、观察/分摊、优化使用率。
 6. **Sustainability（可持续性）**：能耗/碳足迹感知、效率改进。

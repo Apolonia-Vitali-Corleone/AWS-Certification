@@ -4,7 +4,7 @@
 
 任何在用 AWS 的团队，需要技术案例支持、最佳实践指导、故障协助。
 
-## 📊 AWS Support Plans 对比
+`📊 AWS Support Plans 对比`
 
 | Support Plan           | 主要特点            | 技术支持                   | Trusted Advisor                                   | TAM（Technical Account Manager）    | 适用场景                                                    |
 | ---------------------- | ------------------- | -------------------------- | ------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
@@ -16,12 +16,22 @@
 
 ------
 
-## 🎯 区分要点
+`🎯 区分要点`
 
 - **Basic / Developer**：没有 TAM，适合个人或小团队。
 - **Business**：虽是生产级支持，但 **没有 TAM**。
 - **Enterprise On-Ramp**：有 **共享 TAM**（pooled TAM），比 Business 高一级。
 - **Enterprise**：最高级别，有 **专属 TAM**，提供持续的架构和运营优化建议。
+
+# Concierge Team
+
+- （仅 Enterprise Support 有）= **非技术**专员，负责**账单与账户**相关：发票、付款方式、税务、信用卡/PO、合并计费（Organizations）、退款/信用、账户设置与升级等。
+- **不做技术**：
+  - 架构指导 → **TAM / Solutions Architect**（B 不是 Concierge）。
+  - 应用开发支持 → 研发/架构团队或 ProServe（A 不对）。
+  - 技术故障与工单 → **AWS Support Engineers**（D 不对）。
+
+一句话：Concierge = **账单/账户管家**，不是技术支持。
 
 # AWS Professional Services（ProServe）
 

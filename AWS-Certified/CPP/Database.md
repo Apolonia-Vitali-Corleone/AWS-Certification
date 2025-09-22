@@ -11,6 +11,8 @@ RDS中的一个引擎
 
 MongoDB API兼容，但是不是MongoDB 的引擎
 
+文档数据库（Mongo 兼容），不是纯 KV，延迟目标也不同。
+
 # Amazon DynamoDB 
 
 NoSQL

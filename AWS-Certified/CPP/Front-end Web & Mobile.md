@@ -22,8 +22,15 @@ Web/移动端快速搭建登录、数据、文件、推送、托管的**成套�
 
   只负责**API 层（GraphQL）**；不管前端托管与整体应用脚手架。Amplify 的 GraphQL 后端默认就是用 **AppSync** 实现。
 
+# Device Farm
+
+# Amazon Location Service
+
 # 选型速记
 
 - 想要**一站式**“前端+托管+后端资源生成”，少折腾基础设施 → **Amplify**。
 - 你已经有/想单独设计一层**GraphQL 网关**（聚合多数据源、实时订阅、细粒度鉴权） → **AppSync**。
 - 两者常一起用：**Amplify 生成并驱动 AppSync** 的 GraphQL API，数据落 **DynamoDB**，登录走 **Cognito**，前端托管用 **Amplify Hosting**。
+
+
+

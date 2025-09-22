@@ -66,7 +66,7 @@
 
 点对点，不经过AWS Transit Gateway，不需要“路由”
 
-# Internet Gateway（IGW）
+# VPC Internet Gateway（IGW）
 
 让子网可直连公网；默认 VPC 才自带，其它需手动创建与附加并在路由表指向。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html?utm_source=chatgpt.com))
 
@@ -74,12 +74,64 @@
 
 多VPC之间，像一个路由一样
 
-# Gateway Endpoint
+**TGW = 中央路由枢纽（Hub-and-Spoke）**：把很多 **VPC**、**VPN**、**Direct Connect** 连接到同一个“总线”。
 
-S3/DynamoDB 专用；路由表指向网关，无需 IGW/NAT。**不使用 PrivateLink**。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html?utm_source=chatgpt.com))
+优势：避免 N*(N-1)/2 的 VPC 互联网状复杂度；集中路由、分段隔离、可扩展到上百个 VPC。
+
+典型链路：**On-prem → Direct Connect → DX Gateway →（关联）Transit Gateway → 各 VPC 附着**。随着 VPC 增长，只需继续往 TGW 上“挂”即可。
 
 # VPC Flow Logs
 
 记录 **ENI/VPC/Subnet** 粒度的**流量元数据**（五元组、accept/reject 等），可送 CloudWatch Logs / S3 / Firehose；S3 默认**5 分钟**聚合投递一批文件。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html?utm_source=chatgpt.com))
 
 inbound and outbound traffic in Amazon VPC
+
+**只记录流量**（可见性/审计），**不能做允许或拒绝**。
+
+# Security Group
+
+实例级，**有状态 stateful**，只写允许规则（缺省即拒）。
+
+# Network Access Control List（Network  ACLs）
+
+关键词：stateless network  filtering
+
+act as a VPC firewall at the subnet level
+
+VPC的子网层级的防火墙
+
+子网级，**无状态 stateless**，有**显式允许/拒绝**规则，入站出站都要配。
+
+# VPC Endpoints
+
+## Gateway Endpoint
+
+S3/DynamoDB 专用；路由表指向网关，无需 IGW/NAT。**不使用 PrivateLink**。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html?utm_source=chatgpt.com))
+
+## Interface Endpoint
+
+Interface Endpoint（IF，based on PrivateLink）
+
+**支持**：绝大多数 **AWS 服务**、**第三方/自建私有服务**（Endpoint Service）
+
+**工作方式**：在你子网里创建 **ENI（私有 IP）**，流量直连该 ENI。可启用 **Private DNS** 用服务内网域名直连。
+
+**安全**：ENI 绑 **Security Group**；再用 **Endpoint Policy** 做细粒度授权。
+
+**费用**：**按时 + 按数据处理量计费**。
+
+**场景**：私网访问各种 AWS 服务（如 SSM、KMS、STS、ECR 等），或对接 SaaS/别账号的私有服务。
+
+**提示**：按 **AZ** 创建（高可用建议每个 AZ 建一份）；可用 **AWS RAM** 共享给同组织其他账号/VPC。
+
+## Gateway Load Balancer Endpoint（GWLB）
+
+**支持**：接入 **Gateway Load Balancer** 的**流量型虚拟设备**（防火墙/IDS/IPS 等）。
+
+**工作方式**：路由把流量导向 **GWLB Endpoint**，再经由对端的 GWLB 与虚拟设备处理。
+
+**费用**：按时 + 按数据处理量计费。
+
+**场景**：集中式/跨 VPC 的东西向/北南向流量检查与转发（检流/回注）。
+
+**提示**：常与 TGW/VPC 路由配合，做集中安全检查。
