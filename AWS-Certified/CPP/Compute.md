@@ -51,6 +51,31 @@ supported by Saving Plans
 
 ## EC2 Instance
 
+### Spot Instance
+
+
+
+### Dedicated Instance
+
+
+
+### Dedicated Hosts
+
+要使用现有的 **按插槽/按内核/按虚拟机** 的商业软件许可（如 Microsoft Windows/SQL Server 等），你需要对**物理主机的插槽、核心数**和**在该主机上的实例放置**有可见性与控制。**Dedicated Host** 提供一整台专属物理服务器给你，暴露主机层级的拓扑（sockets/cores/host ID）与放置/亲和性控制，满足 BYOL 的合规计量与审计要求。
+
+
+
+### Reversed Instance
+
+**（RI，预留实例）**：1/3 年承诺换折扣；
+
+- **Regional RI**：仅折扣；
+- **Zonal RI**：既**折扣**又**保容量**（和 ODCR 都能保容量，但 RI 有承诺与折扣）。
+
+
+
+### Convertible Reserved Instances
+
 **Convertible Reserved Instances（可转换预留实例）是什么意思？**
 
 - **本质**：一种 EC2 的**计费承诺**（1 年或 3 年）。你承诺长期使用，换取较大折扣。
@@ -75,6 +100,84 @@ supported by Saving Plans
   不想签约 → **On-Demand**；
   能容忍中断、追求最低价 → **Spot**（可能被回收）。
 
+
+
+### On-Demand Instances
+
+**（按需实例）**：默认**计费方式**，随开随用，按秒/小时付费，不承诺期限，也**不保证**提前为你占住容量。
+
+
+
+### On-Demand Capacity Reservations
+
+**（按需容量预留，ODCR）**：一种**容量保障机制**，在指定 AZ 为某一规格**锁定容量**；锁着期间按**按需价**计费（可被 Savings Plans/区域 RI 抵扣费用）。
+
+
+
+### Savings Plans
+
+只有1年和3年。3年的折扣最大。
+
+承诺自己多少小时的使用额。
+
+**（节省计划）**：1/3 年承诺 $ /小时使用额，换取**按需价折扣**（Compute SP 最灵活）。不保容量。
+
+
+
+#### Compute Savings Plans
+
+
+
+#### EC2 Savings Plans
+
+
+
+
+
+
+
+
+
+## optimized
+
+### Compute optimized（计算优化）
+
+- **Families**: **C7i / C7g(Graviton) / C7a(AMD) / C6i / C6g**, **Hpc7g / Hpc6a**（HPC 专用）
+- **优化点**: 高 vCPU 比例、单核/整机算力强
+- **常见场景**: 高并发 Web/API、批处理、视频转码、科学计算、HPC 作业
+
+### Memory optimized（内存优化）
+
+- **Families**: **R7i / R7g / R7a / R6i / R6g**, **X2idn / X2iedn / X2iezn**, **High Memory (u-6tb1 ~ u-24tb1)**, **z1d（高频 + 大内存/本地 NVMe）**
+- **优化点**: 高内存/CPU 比、极大内存容量、低延迟内存访问
+- **常见场景**: 内存数据库（Redis/Memcached）、高性能缓存、实时大数据分析、内存密集型 Java/微服务、SAP HANA
+
+### Storage optimized（存储优化）
+
+- **Families**: **I4i / I3 / I3en**（本地 NVMe，超高 IOPS/吞吐），**Im4gn / Is4gen**（Graviton + Nitro SSD），**D3 / D3en / H1**（大容量 HDD/吞吐）
+- **优化点**: 本地直连 NVMe/大盘吞吐/高顺序读写
+- **常见场景**: NoSQL（Cassandra/ScyllaDB）、搜索（Elasticsearch/OpenSearch）、数据仓库、日志/数据湖预处理、需要本地盘的分布式系统
+
+### Accelerated computing（加速计算）
+
+- **GPU 训练/通用加速**: **P5 / P4d / P3**（NVIDIA 数据中心 GPU，深度学习训练、HPC）
+- **GPU 图形/推理/媒体**: **G5 / G4dn**（渲染、虚拟工作站、部分推理/编解码）
+- **视频转码**: **VT1**（专用芯片，低成本高路数转码）
+- **ML 专用芯片**: **Trn1 / Trn1n (Trainium, 训练)**，**Inf2 / Inf1 (Inferentia, 推理)**
+- **FPGA**: **F1**（可编程逻辑加速）
+- **优化点**: 专用硬件（GPU/ASIC/FPGA）带来的吞吐、并行度
+- **常见场景**: 深度学习训练与推理、渲染、视频转码、基因组学、定制硬件加速
+
+### General purpose（通用型，平衡型）
+
+- **Families**: **M7i / M7g / M6i / M6g**（平衡 vCPU/内存/网络），**T4g / T3**（Burstable 突发性能，低成本）
+- **优化点**: 资源均衡（或按需突发）
+- **常见场景**: 大多数通用应用、微服务、中小型数据库、开发测试
+
+> 备注：**Mac**（mac1/mac2）是运行 macOS 的专用实例，场景特殊；严格来说不属于上述“优化”分类。
+
+
+
 ## AMIs
 
 `Amazon Machine Images (AMIs)`
@@ -90,6 +193,8 @@ supported by Saving Plans
 ## Instance store
 
 本地盘（Instance store）快又近，但**掉电就忘**；EBS/EFS/S3 是**服务级持久化**。
+
+
 
 # EC2 Image Builder
 
@@ -150,40 +255,3 @@ CLI工具
 
 可以帮你判断EC2 instance的rightsize
 
-# optimized
-
-## 1) Compute optimized（计算优化）
-
-- **Families**: **C7i / C7g(Graviton) / C7a(AMD) / C6i / C6g**, **Hpc7g / Hpc6a**（HPC 专用）
-- **优化点**: 高 vCPU 比例、单核/整机算力强
-- **常见场景**: 高并发 Web/API、批处理、视频转码、科学计算、HPC 作业
-
-## 2) Memory optimized（内存优化）
-
-- **Families**: **R7i / R7g / R7a / R6i / R6g**, **X2idn / X2iedn / X2iezn**, **High Memory (u-6tb1 ~ u-24tb1)**, **z1d（高频 + 大内存/本地 NVMe）**
-- **优化点**: 高内存/CPU 比、极大内存容量、低延迟内存访问
-- **常见场景**: 内存数据库（Redis/Memcached）、高性能缓存、实时大数据分析、内存密集型 Java/微服务、SAP HANA
-
-## 3) Storage optimized（存储优化）
-
-- **Families**: **I4i / I3 / I3en**（本地 NVMe，超高 IOPS/吞吐），**Im4gn / Is4gen**（Graviton + Nitro SSD），**D3 / D3en / H1**（大容量 HDD/吞吐）
-- **优化点**: 本地直连 NVMe/大盘吞吐/高顺序读写
-- **常见场景**: NoSQL（Cassandra/ScyllaDB）、搜索（Elasticsearch/OpenSearch）、数据仓库、日志/数据湖预处理、需要本地盘的分布式系统
-
-## 4) Accelerated computing（加速计算）
-
-- **GPU 训练/通用加速**: **P5 / P4d / P3**（NVIDIA 数据中心 GPU，深度学习训练、HPC）
-- **GPU 图形/推理/媒体**: **G5 / G4dn**（渲染、虚拟工作站、部分推理/编解码）
-- **视频转码**: **VT1**（专用芯片，低成本高路数转码）
-- **ML 专用芯片**: **Trn1 / Trn1n (Trainium, 训练)**，**Inf2 / Inf1 (Inferentia, 推理)**
-- **FPGA**: **F1**（可编程逻辑加速）
-- **优化点**: 专用硬件（GPU/ASIC/FPGA）带来的吞吐、并行度
-- **常见场景**: 深度学习训练与推理、渲染、视频转码、基因组学、定制硬件加速
-
-## 5) General purpose（通用型，平衡型）
-
-- **Families**: **M7i / M7g / M6i / M6g**（平衡 vCPU/内存/网络），**T4g / T3**（Burstable 突发性能，低成本）
-- **优化点**: 资源均衡（或按需突发）
-- **常见场景**: 大多数通用应用、微服务、中小型数据库、开发测试
-
-> 备注：**Mac**（mac1/mac2）是运行 macOS 的专用实例，场景特殊；严格来说不属于上述“优化”分类。

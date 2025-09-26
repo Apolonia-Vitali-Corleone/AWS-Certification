@@ -32,11 +32,17 @@ S3敏感数据识别
 
 PII discovery, S3
 
-# 7-IAM Identity Center
+# IAM Identity Center
+
+
+
+
 
 Identity Center 负责 SSO 与权限分配，本质上**不是**用来直接发凭证的服务。
 
 **IAM Identity Center** 提供的是 **SSO/访问分配**（人到账号/角色的映射）。它**内部会调用 STS** 发放短期凭证，但它不是“给开发者直接颁发临时凭证的 API”，而是用于登录门户、CLI SSO 工作流与权限分配的管理层。
+
+**可同时管“自家 AWS 账户 + 第三方 SaaS”**：Identity Center 充当 **IdP（Identity Provider，身份提供方）/ SSO（Single Sign-On，单点登录）中枢**，用 **SAML 2.0 / OIDC** 给上百种第三方应用发登录令牌（如 Microsoft 365、Salesforce、Slack、GitHub 等），并提供**用户门户**统一入口。
 
 # 8-Certificate Manager
 
@@ -97,7 +103,7 @@ evidence collection
 
 # 20-Security Hub CSPM
 
-# 21-IAM
+# IAM
 
 `AWS Identity and Access Management (IAM) `
 
@@ -109,6 +115,10 @@ evidence collection
 注意
 
 - EC2使用ROLE
+
+
+
+只管**AWS 资源的 API 级权限**（用户/角色/策略），**不做用户门户，也不对第三方 SaaS 发 SSO**。
 
 ## IAM Access Analyzer
 

@@ -42,6 +42,10 @@ STT
 
 翻译
 
+# Amazon Forecast
+
+通用**时间序列预测**服务，与迁移商业案例无关。
+
 # Amazon Fraud Detector
 
 托管的**线上欺诈风险评估**服务（基于机器学习+规则）。
@@ -61,4 +65,64 @@ STT
 # Amazon Personalize
 
 托管的**个性化推荐/排序**服务（亚马逊同源算法经验）。
+
+
+
+Amazon SageMaker AI
+
+Amazon Augmented AI
+
+Amazon CodeGuru
+
+Amazon DevOps Guru
+
+Amazon Comprehend
+
+Amazon Forecast
+
+Amazon Fraud Detector
+
+Amazon Kendra
+
+Amazon Personalize
+
+Amazon Polly
+
+Amazon Rekognition
+
+Amazon Textract
+
+Amazon Transcribe
+
+Amazon Translate
+
+AWS DeepRacer
+
+AWS Panorama
+
+Amazon Monitron
+
+AWS HealthLake
+
+Amazon Lookout for Vision
+
+Amazon Lookout for Equipment
+
+Amazon Lookout for Metrics
+
+Amazon Q Business
+
+AWS HealthOmics
+
+Amazon Bedrock
+
+Amazon Bedrock AgentCore
+
+Amazon Q
+
+Amazon Comprehend Medical
+
+Amazon Lex
+
+AWS HealthImaging
 

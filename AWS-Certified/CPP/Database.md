@@ -37,6 +37,8 @@ redis和memcached
 
 多引擎托管平台，包括MySQL，MariaDB，PostgreDB等
 
+Microsoft SQL Server
+
 # Amazon Keyspaces (for Apache Cassandra) 
 
 # Amazon MemoryDB for Redis OSS 

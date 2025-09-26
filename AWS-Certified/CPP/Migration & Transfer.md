@@ -16,6 +16,10 @@ MGN 做的是**整机/块级复制**，把本地物理机或虚机原样“搬�
 
 `ME:Migration Hub`
 
+
+
+只做**发现/清点**：采集本地服务器的清单、依赖与性能数据，然后**把数据喂给 Migration Hub**。它不负责“规划与跟踪”。
+
 # Database Migration Service
 
 `AWS Database Migration Service (AWS DMS) `
@@ -55,6 +59,8 @@ special for database migration, not for lots of files
 `10PB(petabytes) or more`
 
 ## Snowball
+
+
 
 ## Snowcone
 
@@ -153,6 +159,12 @@ special for database migration, not for lots of files
 
 支持以 **SMB 端点**做文件双向迁移/同步。
 
+
+
+DataSync 不仅能“持续同步”，也能做“一次性的大批量迁移”。
+
+
+
 # AWS Transform
 
 # AWS Mainframe Modernization
@@ -185,31 +197,43 @@ https://console.tsologic.com/signin
 
 - **Assess** → **Mobilize** → **Migrate & Modernize**。
 
-# Repurchase
+
+
+# RExx Family
+
+## Repurchase
 
 放弃原系统，直接买现成 SaaS 产品替代。
 
 将自研/自管 CRM/ERP/BI 等，改用 **SaaS**（如 Salesforce、Workday、Atlassian Cloud、QuickSight 等）。
 
-# Replatform
+
+
+## Replatform
 
 不改业务逻辑，只换更省心的平台/托管服务。
 
 自建 MySQL → **Amazon RDS**；自建对象存储 → **S3**；自管队列 → **SQS/SNS**；Tomcat → **Elastic Beanstalk** / **ECS/EKS**。
 
-# Rehost
+
+
+## Rehost
 
 基本不改应用，直接把机器从本地搬到云上。
 
 AWS Application Migration Service (MGN) 把物理/VM 复制成 **EC2**；块存储上 **EBS**；网络按原样建 **VPC**。
 
-# Refactor
+
+
+## Refactor
 
 改代码/架构，拆单体为微服务，深度用云原生。
 
 **Lambda / API Gateway / Step Functions / SQS / SNS / DynamoDB / Aurora / ElastiCache / EventBridge / EKS** 等。
 
-# Retire
+
+
+## Retire
 
 停止使用并下线某应用/组件，保留必要数据后**关停并回收资源**。
 

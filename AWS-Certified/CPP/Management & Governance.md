@@ -16,7 +16,11 @@ IaC
 
 # Amazon CloudWatch
 
-性能检测平台
+性能检测平台。
+
+除了性能之外，也能查application日志，查cloud resource
+
+
 
 **CloudWatch 提供 Billing 计费指标**（命名空间 `AWS/Billing`，如 `EstimatedCharges`）。
 
@@ -25,6 +29,8 @@ IaC
 这正满足“达到特定成本阈值即通知”的需求。
 
 报警本身不发送邮件/短信；通常是**把告警发布到 SNS**再由 SNS 发送。
+
+
 
 # AWS Compute Optimizer
 
@@ -95,6 +101,8 @@ AWS网页UI控制台
 # AWS Well-Architected Tool
 
 架构评估
+
+
 
 # AWS Resource Explorer
 

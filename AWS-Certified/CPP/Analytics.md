@@ -46,6 +46,10 @@ search/log analyse
 
 商业智能（BI）可视化工具
 
+powered by machine learning
+
+
+
 # Amazon Redshift
 
 云数据仓库
