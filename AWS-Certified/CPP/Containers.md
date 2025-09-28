@@ -1,8 +1,6 @@
 # Elastic Container Service
 
-Elastic Container Service
 
-`Amazon Elastic Container Service (Amazon ECS)`
 
 是**编排**服务；你得自己**构建并推送镜像到 ECR**，再定义任务/服务。
 
@@ -18,7 +16,7 @@ Amazon ECS Anywhere
 
 # Elastic Container Registry
 
-Amazon Elastic Container Registry (Amazon ECR)
+这个就是ECR
 
 
 

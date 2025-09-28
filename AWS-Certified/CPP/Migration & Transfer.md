@@ -12,13 +12,11 @@ MGN 做的是**整机/块级复制**，把本地物理机或虚机原样“搬�
 
 # Application Discovery Service
 
-做**资产与依赖发现**（清点服务器、进程、网络依赖），把数据送到 Migration Hub 供**迁移分组/波次规划**用；**不负责生成完整的云上成本估算/商业案例**。若要成本，需要把数据再喂给 ME 或手动进 Pricing Calculator。
+只盘点和发现本地的这些服务；本身不做任何的成本估算、跟踪或者规划。
 
-`ME:Migration Hub`
+它的数据都一般喂给Migration Evaluator来生成 TCO（Total Cost of Ownership，总拥有成本）；也可以手动给 Pricing Calculator来计算成本。
 
 
-
-只做**发现/清点**：采集本地服务器的清单、依赖与性能数据，然后**把数据喂给 Migration Hub**。它不负责“规划与跟踪”。
 
 # Database Migration Service
 
@@ -176,6 +174,8 @@ DataSync 不仅能“持续同步”，也能做“一次性的大批量迁移�
 # Migration Evaluator
 
 https://console.tsologic.com/signin
+
+通过采集或导入**本地（on-premises）服务器的实际使用数据**，给出**右尺⼨（rightsizing）建议**、**节省潜力**，并生成**TCO（Total Cost of Ownership，总拥有成本）商业案例**。
 
 # ---
 

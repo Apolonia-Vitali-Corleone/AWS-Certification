@@ -1,3 +1,13 @@
+# APN partners
+
+AWS 本身不做合规咨询；若需要，可找 **AWS 合作伙伴（APN partners）** 的合规/安全咨询公司。
+
+# AWS AOC
+
+ AWS Attestation of Compliance
+
+AWS 会对**特定托管服务**（如 Amazon S3、Amazon EC2 等）通过独立审计获得 **PCI DSS（Payment Card Industry Data Security Standard）** 合规，并把审计产物 **AOC（Attestation of Compliance，合规证明）** 与 **PCI 责任矩阵（Responsibility Summary/Matrix）** 提供给客户下载（在 **AWS Artifact** 中）。这正是“帮助企业在云上满足 PCI”的官方材料。
+
 # TAM
 
 实时运维/事件管理
@@ -26,13 +36,13 @@
 
 `📊 AWS Support Plans 对比`
 
-| Support Plan           | 主要特点            | 技术支持                   | Trusted Advisor                                   | TAM（Technical Account Manager）    | AWS Support API | 适用场景                                                    |
-| ---------------------- | ------------------- | -------------------------- | ------------------------------------------------- | ----------------------------------- | --------------- | ----------------------------------------------------------- |
-| **Basic**              | 免费                | 仅限账单 & 客户服务支持    | 部分核心检查（Service limits, MFA enabled, etc.） | ❌ 无                                | ❌ 无            | 学习、个人实验、非生产环境                                  |
-| **Developer**          | 付费（起价 $29/月） | Email 技术支持（工作时间） | 部分检查                                          | ❌ 无                                | ❌无             | 开发/测试环境、小团队                                       |
-| **Business**           | 起价 $100/月        | 24x7 技术支持，电话/聊天   | 所有检查                                          | ❌ 无                                | ✅有             | 生产环境、中小型企业                                        |
-| **Enterprise On-Ramp** | 起价 $5,500/月      | 24x7 技术支持              | 所有检查                                          | ✅ **Pooled TAM**（共享 TAM 资源池） | ✅有             | 生产环境、大中型企业，需要架构指导                          |
-| **Enterprise**         | 起价 $15,000/月     | 24x7 技术支持 + 高优先级   | 所有检查                                          | ✅ **Designated TAM**（专属 TAM）    | ✅有             | 大型企业/关键任务系统，需要长期架构优化、安全、成本控制建议 |
+| Support Plan           | 主要特点            | 技术支持                   | Trusted Advisor                                    | TAM（Technical Account Manager）    | AWS Support API | 适用场景                                                    |
+| ---------------------- | ------------------- | -------------------------- | -------------------------------------------------- | ----------------------------------- | --------------- | ----------------------------------------------------------- |
+| **Basic**              | 免费                | 仅限账单 & 客户服务支持    | ❌部分核心检查（Service limits, MFA enabled, etc.） | ❌ 无                                | ❌ 无            | 学习、个人实验、非生产环境                                  |
+| **Developer**          | 付费（起价 $29/月） | Email 技术支持（工作时间） | ❌部分检查                                          | ❌ 无                                | ❌无             | 开发/测试环境、小团队                                       |
+| **Business**           | 起价 $100/月        | 24x7 技术支持，电话/聊天   | ✅所有检查                                          | ❌ 无                                | ✅有             | 生产环境、中小型企业                                        |
+| **Enterprise On-Ramp** | 起价 $5,500/月      | 24x7 技术支持              | ✅所有检查                                          | ✅ **Pooled TAM**（共享 TAM 资源池） | ✅有             | 生产环境、大中型企业，需要架构指导                          |
+| **Enterprise**         | 起价 $15,000/月     | 24x7 技术支持 + 高优先级   | ✅所有检查                                          | ✅ **Designated TAM**（专属 TAM）    | ✅有             | 大型企业/关键任务系统，需要长期架构优化、安全、成本控制建议 |
 
 `🎯 区分要点`
 
@@ -56,6 +66,8 @@
 **出故障/要建议/要工单 SLA** → **Support**
 
 **要人带项目落地（迁移/着陆区/现代化）** → **ProServe**
+
+accelerate cloud adoption
 
 # AWS Activate
 

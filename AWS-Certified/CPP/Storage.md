@@ -146,11 +146,15 @@ EFS=NFS
 
 FSx=特定文件系统
 
+
+
 ## FSx File Gateway
 
 让本地负载访问在AWS中的Windows文件共享
 
 给 **FSx for Windows File Server** 提供 **SMB** 访问/缓存，**不支持 NFS**。
+
+
 
 ## FSx for Windows File Server
 

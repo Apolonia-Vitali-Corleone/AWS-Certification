@@ -16,11 +16,19 @@
 
 # AWS Cost and Usage Reports
 
+不给可视化预测，只给原始数据
+
 # AWS Cost Explorer
 
 可视化分析账单（已经发生的账单）
 
 provide rightsizing recommendations for Amazon EC2 resource at no additional cost
+
+
+
+既可以分析过去、可视化历史花费，还可以给出未来成本预测
+
+
 
 # AWS Pricing Calculator
 

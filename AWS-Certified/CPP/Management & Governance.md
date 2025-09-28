@@ -52,6 +52,12 @@ IaC
 
 **AWS Health Dashboard**（含 Personal Health Dashboard）只报告**AWS 侧的事件**——服务中断、维护、配额快满等，**不检查你账号的安全组配置**，所以发现不了“某端口对 0.0.0.0/0 放通”这类错误。
 
+
+
+提供**全局 AWS 服务状态**与**事件更新**，并且官方就支持**RSS 订阅**（每个区域/服务都有 RSS 源）。
+
+
+
 # AWS License Manager
 
 软件许可证管理器

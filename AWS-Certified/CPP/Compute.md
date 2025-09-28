@@ -126,6 +126,8 @@ supported by Saving Plans
 
 #### Compute Savings Plans
 
+折扣低于Savings Plans
+
 
 
 #### EC2 Savings Plans
@@ -240,6 +242,8 @@ App Runner 是面向**Web 服务/API**的全托管平台，支持**从源码直�
 - 连接 GitHub/CodeCommit（或直接接容器镜像）。
 - 使用 **Cloud Native Buildpacks（经由 CodeBuild）自动构建容器镜像**，再一键部署。
 - 自带 HTTPS、健康检查、自动伸缩与负载均衡，几乎无需运维。
+
+App Runner 从源码自动制镜像并持续部署。
 
 # AWS Copilot 
 

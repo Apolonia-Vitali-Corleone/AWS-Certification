@@ -13,7 +13,7 @@
 
 持续交付流水线
 
-# Cloud9
+# Cloud 9
 
 Web IDE for writing code;
 

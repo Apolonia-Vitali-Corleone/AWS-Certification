@@ -142,7 +142,13 @@ VPC的子网层级的防火墙
 
 ### Gateway Endpoint
 
-S3/DynamoDB 专用；路由表指向网关，无需 IGW/NAT。**不使用 PrivateLink**。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html?utm_source=chatgpt.com))
+S3/DynamoDB 专用
+
+路由表指向网关，无需 IGW/NAT
+
+**不使用 PrivateLink**。([AWS Documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html?utm_source=chatgpt.com))
+
+让S3不走公网直连EC2
 
 
 
